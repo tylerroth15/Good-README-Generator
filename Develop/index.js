@@ -1,31 +1,112 @@
-var inquirer = require("inquirer");
-var fs = require('fs');
+const inquirer = require("inquirer");
+const fs = require('fs');
+const axios = require('axios');
+// const markdown =  require('./utils/generateMarkdown');
+
 
 const questions = [
     {
     type: "input",
-    name: "title",
-    message: "What is your project title?"
+    name: "repo",
+    message: "What is your Repo title?"
 }, 
 {
     type: "input",
-    name: "description",
-    message: "Give a brief description of your project?"
-},
+    name: "username",
+    message: "What is your GitHub Username?"
+}
 ];
+inquirer.prompt(questions)
+.then((username, repo) =>{
+    const queryUrl = `https://api.github.com/repos/${username}/${repo}`;
+        const contribUrl = `https://api.github.com/repos/${username}/${repo}/contributors`;
+        axios
 
-// function writeToFile(fileName, data) {
-// }
+    .get(queryUrl)
+    .then(res =>{
+        if (res.data.description != null){
+            let description = res.data.description;
+        }else{
+            let description = "Description Needed";
+        }
 
-// function init() {
+        let installation = "Enter installation instructions."; 
+        console.log(installation)
+        let usage = "Enter Usage Instructions.";
+        console.log(usage)
+        let tests = "Enter any and all tests run."; 
+        console.log(tests)
+        let questions = "Using the email link below, please reach out with any questions.";
+        console.log(questions)
+        axios
+        .get(contribUrl)
+        .then(data => {
+            const contributors = [];
+            data.data.forEach(element => {
+                contributors.push(element.login);
+                console.log(contributors);
+            })
 
-// }
+        });
+        let license = res.data.license;
+        console.log(license)
+    })
+})
+//     let description;
+//     let installation; 
+//     let usage;
+//     let tests; 
+//     let questions;
+//     let contributors;
+//     let license;
+   
 
-// init();
+//     axios.get(`https://api.github.com/repos/${username}/${repo}`)
+//     .then(res =>{
+//         console.log(res.data);
+//         const writeReadMe = ()=>{
+//             if(description != undefined && installation != undefined && usage != undefined && faq != undefined && license !== undefined)
+//                 {
+//                     const readme =
+//                 `
+//                     # ${repo}
+//                     #### Author: ${username}
 
+//                     ${description}
 
-inquirer
-        .prompt(questions).then(function(data) {console.log("yayayay")})
-    
+//                     //badge 
 
-        
+//                     # Table of Contents
+//                     * ##Installation
+//                     * ##Usage
+//                     * ##Tests
+//                     * ##Questions
+//                     * ##Contributors
+//                     * ##License
+
+//                     ##Installation
+//                     ${installation}
+
+//                     ##Usage
+//                     ${usage}
+
+//                     ##Tests
+//                     ${tests}
+
+//                     ##Questions
+//                     ${questions}
+
+//                     ##Contributors
+//                     ${contributors}
+
+//                     ##License
+//                     ${license}
+//                     `
+//                 };
+//             fs.writeFile(`${repo} README.md`, readme, function(err){
+//                 if (err) console.log(err)
+//             })
+//         }     
+//     })
+// })
+

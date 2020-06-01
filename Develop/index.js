@@ -53,8 +53,6 @@ inquirer.prompt(questions)
 
 ${description}
 
-//badge 
-
 # Table of Contents
 * ## Installation 
 * ## Usage
@@ -87,8 +85,9 @@ ${contributors}
 <img src="https://img.shields.io/github/license/${username}/${repo}">
 
 `
+;
 
-            fs.writeFile("../README.md", readme, (err)=> {
+            fs.writeFile("./README.md", readme, (err)=> {
                 if (err) console.log(err)});
             })    
     });

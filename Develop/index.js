@@ -2,22 +2,29 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const axios = require('axios');
 // const markdown =  require('./utils/generateMarkdown');
+const description = "Description Needed";
+const contributors = [];
+const installation = "Enter installation instructions."; 
+const usage = "Enter Usage Instructions.";
+const tests = "Enter any and all tests run."; 
+const faq = "Using the email link below, please reach out with any questions.";
+const email = "someone@gmail.com";
 
 
 const questions = [
     {
     type: "input",
     name: "repo",
-    message: "What is your Repo title?"
+    message: "What is your Repo title?",
 }, 
 {
     type: "input",
     name: "username",
-    message: "What is your GitHub Username?"
+    message: "What is your GitHub Username?",
 }
 ];
 inquirer.prompt(questions)
-.then((username, repo) =>{
+.then(({username, repo}) =>{
     const queryUrl = `https://api.github.com/repos/${username}/${repo}`;
         const contribUrl = `https://api.github.com/repos/${username}/${repo}/contributors`;
         axios
@@ -25,88 +32,111 @@ inquirer.prompt(questions)
     .get(queryUrl)
     .then(res =>{
         if (res.data.description != null){
-            let description = res.data.description;
-        }else{
-            let description = "Description Needed";
+            description = res.data.description;
         }
 
-        let installation = "Enter installation instructions."; 
-        console.log(installation)
-        let usage = "Enter Usage Instructions.";
-        console.log(usage)
-        let tests = "Enter any and all tests run."; 
-        console.log(tests)
-        let questions = "Using the email link below, please reach out with any questions.";
-        console.log(questions)
         axios
         .get(contribUrl)
         .then(data => {
-            const contributors = [];
+
             data.data.forEach(element => {
                 contributors.push(element.login);
-                console.log(contributors);
+                
             })
-
         });
-        let license = res.data.license;
-        console.log(license)
-    })
-})
-//     let description;
-//     let installation; 
-//     let usage;
-//     let tests; 
-//     let questions;
-//     let contributors;
-//     let license;
-   
+        
 
-//     axios.get(`https://api.github.com/repos/${username}/${repo}`)
-//     .then(res =>{
-//         console.log(res.data);
-//         const writeReadMe = ()=>{
-//             if(description != undefined && installation != undefined && usage != undefined && faq != undefined && license !== undefined)
-//                 {
-//                     const readme =
-//                 `
-//                     # ${repo}
-//                     #### Author: ${username}
+        const readme =
+`
+# ${repo}
+#### Author: ${username}
 
-//                     ${description}
+${description}
 
-//                     //badge 
+//badge 
 
-//                     # Table of Contents
-//                     * ##Installation
-//                     * ##Usage
-//                     * ##Tests
-//                     * ##Questions
-//                     * ##Contributors
-//                     * ##License
+# Table of Contents
+* ## Installation 
+* ## Usage
+* ## Tests
+* ## Questions
+* ## Contributors
+* ## License
 
-//                     ##Installation
-//                     ${installation}
+## Installation
+${installation}
 
-//                     ##Usage
-//                     ${usage}
+## Usage
+${usage}
 
-//                     ##Tests
-//                     ${tests}
+## Tests
+${tests}
 
-//                     ##Questions
-//                     ${questions}
+## Questions
+${faq}
 
-//                     ##Contributors
-//                     ${contributors}
+### Email
 
-//                     ##License
-//                     ${license}
-//                     `
-//                 };
-//             fs.writeFile(`${repo} README.md`, readme, function(err){
-//                 if (err) console.log(err)
-//             })
-//         }     
-//     })
-// })
+### Picture
+<img src="${res.data.owner.avatar_url}" width="30" style="border-radius: 15px"> 
+
+## Contributors
+${contributors}
+
+## License
+<img src="https://img.shields.io/github/license/${username}/${repo}">
+
+`
+
+            fs.writeFile("../README.md", readme, (err)=> {
+                if (err) console.log(err)});
+            })    
+    });
+            // // Description of Repo
+            // const writeDescription = (des)=> {
+            //     if (des !=null){
+            //         description= des;
+            //         writeInstallation();
+            //     }else {
+            //         inquirer.prompt({
+            //             message:"Write a brief description of your project.",
+            //             name: "descrip"
+            //         }).then(({descrip})=> {
+            //             description = descrip;
+            //             writeInstallation();
+            //         })
+            //     }
+            // }
+            // // Installing of Repo
+            // const writeInstallation = () => {
+            //     inqurier.prompt({
+            //         message: "Briefly describe the installation process for your file.",
+            //         name: "install"
+            //     }).then(({install})=>{
+            //         installation = install;
+            //         writeUsage();
+            //     });
+            // }
+            // // Usage of Repo
+            // const writeUsage = () =>{
+            //     inquirer.prompt({
+            //         message: "What can your project be used for?",
+            //         name: "uses"
+            //     }).then(({uses})=>{
+            //     usage = uses
+            //     writeTests();
+            // })
+            // }
+            // //Testing for Repo
+            // const writeTest =() =>
+            // inquirer.prompt({
+            //     message: "What is a test that you can do for your project",
+            //     name: "test"
+            // }).then(({test})=>{
+            //     tests= test;
+            //     writeQuestions();
+            // });
+
+        
+
 

@@ -1,5 +1,5 @@
 
-# Salty-Cloud-Frogs-Project-1
+# Portfolio
 #### Author: tylerroth15
 
 Description Needed
@@ -33,5 +33,5 @@ Using the email link below, please reach out with any questions.
 
 
 ## License
-<img src="https://img.shields.io/github/license/tylerroth15/Salty-Cloud-Frogs-Project-1">
+<img src="https://img.shields.io/github/license/tylerroth15/Portfolio">
 

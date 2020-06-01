@@ -91,50 +91,50 @@ ${contributors}
                 if (err) console.log(err)});
             })    
     });
-            // // Description of Repo
-            // const writeDescription = (des)=> {
-            //     if (des !=null){
-            //         description= des;
-            //         writeInstallation();
-            //     }else {
-            //         inquirer.prompt({
-            //             message:"Write a brief description of your project.",
-            //             name: "descrip"
-            //         }).then(({descrip})=> {
-            //             description = descrip;
-            //             writeInstallation();
-            //         })
-            //     }
-            // }
-            // // Installing of Repo
-            // const writeInstallation = () => {
-            //     inqurier.prompt({
-            //         message: "Briefly describe the installation process for your file.",
-            //         name: "install"
-            //     }).then(({install})=>{
-            //         installation = install;
-            //         writeUsage();
-            //     });
-            // }
-            // // Usage of Repo
-            // const writeUsage = () =>{
-            //     inquirer.prompt({
-            //         message: "What can your project be used for?",
-            //         name: "uses"
-            //     }).then(({uses})=>{
-            //     usage = uses
-            //     writeTests();
-            // })
-            // }
-            // //Testing for Repo
-            // const writeTest =() =>
-            // inquirer.prompt({
-            //     message: "What is a test that you can do for your project",
-            //     name: "test"
-            // }).then(({test})=>{
-            //     tests= test;
-            //     writeQuestions();
-            // });
+            // Description of Repo
+            const writeDescription = (des)=> {
+                if (des !=null){
+                    description= des;
+                    writeInstallation();
+                }else {
+                    inquirer.prompt({
+                        message:"Write a brief description of your project.",
+                        name: "descrip"
+                    }).then(({descrip})=> {
+                        description = descrip;
+                        writeInstallation();
+                    })
+                }
+            }
+            // Installing of Repo
+            const writeInstallation = () => {
+                inqurier.prompt({
+                    message: "Briefly describe the installation process for your file.",
+                    name: "install"
+                }).then(({install})=>{
+                    installation = install;
+                    writeUsage();
+                });
+            }
+            // Usage of Repo
+            const writeUsage = () =>{
+                inquirer.prompt({
+                    message: "What can your project be used for?",
+                    name: "uses"
+                }).then(({uses})=>{
+                usage = uses
+                writeTests();
+            })
+            }
+            //Testing for Repo
+            const writeTest =() =>
+            inquirer.prompt({
+                message: "What is a test that you can do for your project",
+                name: "test"
+            }).then(({test})=>{
+                tests= test;
+                writeQuestions();
+            });
 
         
 

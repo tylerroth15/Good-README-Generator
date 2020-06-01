@@ -21,7 +21,75 @@ const questions = [
     type: "input",
     name: "username",
     message: "What is your GitHub Username?",
-}
+},
+{
+    type: "input",
+    name: "descrip",
+    message:"Write a brief description of your project.",
+},
+{
+    type: "input",
+    name: "installation",
+    message: "Briefly describe the installation process for your file.",
+},
+{
+    type: "input",
+    name: "usage",
+    message: "What can your project be used for?",
+},
+// {
+//     type: "input",
+//     name: "testing",
+//     message: "What is a test that you can do for your project",
+// }
+// Description of Repo
+// const writeDescription = (des)=> {
+//     if (des !=null){
+//         description= des;
+//         writeInstallation();
+//     }else {
+//         inquirer.prompt({
+            
+//             name: "descrip"
+//         }).then(({descrip})=> {
+//             description = descrip;
+//             writeInstallation();
+//         })
+//     }
+// }
+// // Installing of Repo
+// const writeInstallation = () => {
+//     inqurier.prompt({
+//         type: "input",
+//         message: "Briefly describe the installation process for your file.",
+//         name: "install"
+//     }).then(({install})=>{
+//         installation = install;
+//         writeUsage();
+//     });
+// }
+// // Usage of Repo
+// const writeUsage = () =>{
+//     inquirer.prompt({
+//         type: "input",
+//         message: "What can your project be used for?",
+//         name: "uses"
+//     }).then(({uses})=>{
+//     usage = uses
+//     writeTests();
+// })
+// }
+// //Testing for Repo
+// const writeTest =() =>
+// inquirer.prompt({
+//     type: "input",
+//     message: "What is a test that you can do for your project",
+//     name: "test"
+// }).then(({test})=>{
+//     tests= test;
+//     writeQuestions();
+// });
+
 ];
 inquirer.prompt(questions)
 .then(({username, repo}) =>{
@@ -68,7 +136,7 @@ ${installation}
 ${usage}
 
 ## Tests
-${tests}
+
 
 ## Questions
 ${faq}
@@ -91,51 +159,7 @@ ${contributors}
                 if (err) console.log(err)});
             })    
     });
-            // Description of Repo
-            const writeDescription = (des)=> {
-                if (des !=null){
-                    description= des;
-                    writeInstallation();
-                }else {
-                    inquirer.prompt({
-                        message:"Write a brief description of your project.",
-                        name: "descrip"
-                    }).then(({descrip})=> {
-                        description = descrip;
-                        writeInstallation();
-                    })
-                }
-            }
-            // Installing of Repo
-            const writeInstallation = () => {
-                inqurier.prompt({
-                    message: "Briefly describe the installation process for your file.",
-                    name: "install"
-                }).then(({install})=>{
-                    installation = install;
-                    writeUsage();
-                });
-            }
-            // Usage of Repo
-            const writeUsage = () =>{
-                inquirer.prompt({
-                    message: "What can your project be used for?",
-                    name: "uses"
-                }).then(({uses})=>{
-                usage = uses
-                writeTests();
-            })
-            }
-            //Testing for Repo
-            const writeTest =() =>
-            inquirer.prompt({
-                message: "What is a test that you can do for your project",
-                name: "test"
-            }).then(({test})=>{
-                tests= test;
-                writeQuestions();
-            });
-
+            
         
 
 

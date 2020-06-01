@@ -19,7 +19,7 @@ Enter installation instructions.
 Enter Usage Instructions.
 
 ## Tests
-Enter any and all tests run.
+
 
 ## Questions
 Using the email link below, please reach out with any questions.

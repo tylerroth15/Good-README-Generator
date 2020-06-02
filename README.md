@@ -2,7 +2,7 @@
 # Portfolio
 #### Author: tylerroth15
 
-Show off my work
+Show off the work
 
 # Table of Contents
 * [Installation](#installation) 
@@ -22,7 +22,7 @@ undefined
 
 ## Tests
 
-NA
+na
 
 ## Questions
 
@@ -36,7 +36,7 @@ Using the email link below, please reach out with any questions.
 tylerroth1535@gmail.com
 
 ## Contributors
- 
+
 
 ## License
 <img src="https://img.shields.io/github/license/tylerroth15/Portfolio">

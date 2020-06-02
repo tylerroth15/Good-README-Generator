@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const axios = require('axios');
 // const markdown =  require('./utils/generateMarkdown');
-const credits = [" "]; 
+const credits = [""]; 
 const faq = "Using the email link below, please reach out with any questions.";
 
 

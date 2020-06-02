@@ -1,8 +1,10 @@
 
-# Portfolio
+# Good-README-Generator
 #### Author: tylerroth15
 
-work
+test
+
+### Open Issues <img src= "https://img.shields.io/github/issues/tylerroth15/Good-README-Generator">
 
 # Table of Contents
 * [Installation](#installation) 
@@ -18,11 +20,11 @@ npm i
 
 ## Usage
 
-undefined
+na
 
 ## Tests
 
-na
+npm test
 
 ## Questions
 
@@ -33,11 +35,11 @@ Using the email link below, please reach out with any questions.
 
 ### Email
 
-tylerroth1535@gmail.cmo
+tylerroth1535@gmail.com
 
 ## Contributors
 
 
 ## License
-<img src="https://img.shields.io/github/license/tylerroth15/Portfolio">
+<img src="https://img.shields.io/github/license/tylerroth15/Good-README-Generator">
 

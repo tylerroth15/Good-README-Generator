@@ -34,7 +34,7 @@ const questions = [
 },
 {
     type: "input",
-    name: "tests",
+    name: "usage",
     message: "What should a user know about installing this repo?"
 },
 {
@@ -68,6 +68,8 @@ inquirer.prompt(questions)
 #### Author: ${username}
 
 ${description}
+
+### Open Issues <img src= "https://img.shields.io/github/issues/${username}/${repo}">
 
 # Table of Contents
 * [Installation](#installation) 
@@ -109,7 +111,7 @@ ${credits}
 `
 ;
 
-            fs.writeFile("../README.md", readme, (err)=> {
+            fs.writeFile(repo + "README.md", readme, (err)=> {
                 if (err) console.log(err)});
             })    
     });

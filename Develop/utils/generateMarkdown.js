@@ -1,49 +1,49 @@
-function generateMarkdown(data) {
-  return `
-  # ${data.repo}
-  #### Author: ${data.username}
+// function generateMarkdown(data) {
+//   return `
+//   # ${data.repo}
+//   #### Author: ${data.username}
   
-  ${description}
+//   ${description}
   
-  # Table of Contents
-  * [Installation](#installation) 
-  * [Usage](#usage)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  * [Contriubtors](#contributors)
-  * [License](#license)
+//   # Table of Contents
+//   * [Installation](#installation) 
+//   * [Usage](#usage)
+//   * [Tests](#tests)
+//   * [Questions](#questions)
+//   * [Contriubtors](#contributors)
+//   * [License](#license)
   
-  ## Installation
+//   ## Installation
   
-  ${install}
+//   ${install}
   
-  ## Usage
+//   ## Usage
   
-  ${usage}
+//   ${usage}
   
-  ## Tests
+//   ## Tests
   
-  ${tests}
+//   ${tests}
   
-  ## Questions
+//   ## Questions
   
-  ${faq}
+//   ${faq}
   
-  ### Picture
-  <img src="${res.data.owner.avatar_url}" width="30" style="border-radius: 15px"> 
+//   ### Picture
+//   <img src="${res.data.owner.avatar_url}" width="30" style="border-radius: 15px"> 
   
-  ### Email
+//   ### Email
   
-  ${email}
+//   ${email}
   
-  ## Contributors
-  ${credits}
+//   ## Contributors
+//   ${credits}
   
-  ## License
-  <img src="https://img.shields.io/github/license/${username}/${repo}">
+//   ## License
+//   <img src="https://img.shields.io/github/license/${username}/${repo}">
   
-  `
-;
-}
+//   `
+// ;
+// }
 
-module.exports = generateMarkdown;
+// module.exports = generateMarkdown;

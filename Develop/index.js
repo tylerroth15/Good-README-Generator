@@ -1,14 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
 const axios = require('axios');
-// const markdown =  require('./utils/generateMarkdown');
-// const description = "Description Needed";
+const markdown =  require('./utils/generateMarkdown');
 const credits = ["none"]; 
-// const installation = "Enter installation instructions."; 
-// const usage = "Enter Usage Instructions.";
-// const tests = "Enter any and all tests run."; 
 const faq = "Using the email link below, please reach out with any questions.";
-// const email = "someone@gmail.com";
 
 
 const questions = [
@@ -67,54 +62,54 @@ inquirer.prompt(questions)
             }
                 
         })
-        const readme =
-`
-# ${repo}
-#### Author: ${username}
+//         const readme =
+// `
+// # ${repo}
+// #### Author: ${username}
 
-${description}
+// ${description}
 
-# Table of Contents
-* [Installation](#installation) 
-* [Usage](#usage)
-* [Tests](#tests)
-* [Questions](#questions)
-* [Contriubtors](#contributors)
-* [License](#license)
+// # Table of Contents
+// * [Installation](#installation) 
+// * [Usage](#usage)
+// * [Tests](#tests)
+// * [Questions](#questions)
+// * [Contriubtors](#contributors)
+// * [License](#license)
 
-## Installation
+// ## Installation
 
-${install}
+// ${install}
 
-## Usage
+// ## Usage
 
-${usage}
+// ${usage}
 
-## Tests
+// ## Tests
 
-${tests}
+// ${tests}
 
-## Questions
+// ## Questions
 
-${faq}
+// ${faq}
 
-### Picture
-<img src="${res.data.owner.avatar_url}" width="30" style="border-radius: 15px"> 
+// ### Picture
+// <img src="${res.data.owner.avatar_url}" width="30" style="border-radius: 15px"> 
 
-### Email
+// ### Email
 
-${email}
+// ${email}
 
-## Contributors
-${credits}
+// ## Contributors
+// ${credits}
 
-## License
-<img src="https://img.shields.io/github/license/${username}/${repo}">
+// ## License
+// <img src="https://img.shields.io/github/license/${username}/${repo}">
 
-`
-;
+// `
+// ;
 
-            fs.writeFile("./README.md", readme, (err)=> {
+            fs.writeFile("./README.md", markdown, (err)=> {
                 if (err) console.log(err)});
             })    
     });

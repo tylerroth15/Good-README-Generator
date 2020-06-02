@@ -1,8 +1,9 @@
-
-# Portfolio
+# Good-README-Generator
 #### Author: tylerroth15
 
-work
+Created a command-line application that dynamically generates a README.md from a user's input and will pull information from the GitHub username and repo provided. 
+
+### Open Issues <img src= "https://img.shields.io/github/issues/tylerroth15/Good-README-Generator">
 
 # Table of Contents
 * [Installation](#installation) 
@@ -18,11 +19,11 @@ npm i
 
 ## Usage
 
-undefined
+This will give you the layout of a good ReadMe. Take time to fill out the user prompts to insure you have a strong ReadMe.
 
 ## Tests
 
-na
+npm test
 
 ## Questions
 
@@ -33,11 +34,11 @@ Using the email link below, please reach out with any questions.
 
 ### Email
 
-tylerroth1535@gmail.cmo
+tylerroth1535@gmail.com
 
 ## Contributors
 
 
 ## License
-<img src="https://img.shields.io/github/license/tylerroth15/Portfolio">
+<img src="https://img.shields.io/github/license/tylerroth15/Good-README-Generator">
 

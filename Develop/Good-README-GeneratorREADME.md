@@ -2,7 +2,7 @@
 # Good-README-Generator
 #### Author: tylerroth15
 
-test
+Created a command-line application that dynamically generates a README.md from a user's input and will pull information from the GitHub username and repo provided. 
 
 ### Open Issues <img src= "https://img.shields.io/github/issues/tylerroth15/Good-README-Generator">
 
@@ -20,7 +20,7 @@ npm i
 
 ## Usage
 
-na
+This will give you the layout of a good ReadMe. Take time to fill out the user prompts to insure you have a strong ReadMe.
 
 ## Tests
 

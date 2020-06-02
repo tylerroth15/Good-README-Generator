@@ -1,39 +1,47 @@
-
-# Portfolio
-#### Author: tylerroth15
-
-Description Needed
-
-//badge 
-
-# Table of Contents
-* ## Installation 
-* ## Usage
-* ## Tests
-* ## Questions
-* ## Contributors
-* ## License
-
-## Installation
-Enter installation instructions.
-
-## Usage
-Enter Usage Instructions.
-
-## Tests
-Enter any and all tests run.
-
-## Questions
-Using the email link below, please reach out with any questions.
-
-### Email
-
-### Picture
-<img src="https://avatars0.githubusercontent.com/u/59520608?v=4" width="30" style="border-radius: 15px"> 
-
-## Contributors
-
-
-## License
-<img src="https://img.shields.io/github/license/tylerroth15/Portfolio">
-
+function generateMarkdown(data) {
+  return `
+  # ${data.repo}
+  #### Author: ${data.username}
+  
+  ${description}
+  
+  # Table of Contents
+  * [Installation](#installation) 
+  * [Usage](#usage)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  * [Contriubtors](#contributors)
+  * [License](#license)
+  
+  ## Installation
+  
+  ${install}
+  
+  ## Usage
+  
+  ${usage}
+  
+  ## Tests
+  
+  ${tests}
+  
+  ## Questions
+  
+  ${faq}
+  
+  ### Picture
+  <img src="${res.data.owner.avatar_url}" width="30" style="border-radius: 15px"> 
+  
+  ### Email
+  
+  ${email}
+  
+  ## Contributors
+  ${credits}
+  
+  ## License
+  <img src="https://img.shields.io/github/license/${username}/${repo}">
+  
+  `
+;
+}

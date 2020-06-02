@@ -109,7 +109,7 @@ inquirer.prompt(questions)
 // `
 // ;
 
-            fs.writeFile("./README.md", markdown, (err)=> {
+            fs.writeFile("../README.md", markdown, (err)=> {
                 if (err) console.log(err)});
             })    
     });
